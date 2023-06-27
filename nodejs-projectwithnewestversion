@@ -21,5 +21,8 @@ sh 'npm run sonar'
 sh "echo uploading the artifact to nexus" 
 //sh 'npm publish'
       }
+   stage('UploadintoNexus') {        
+sh "echo deploying application" 
+sh 'npm start'
+      }
 }
-
