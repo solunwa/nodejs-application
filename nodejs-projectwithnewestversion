@@ -18,8 +18,7 @@ sh "echo starting to run code quality analysis"
 sh 'npm run sonar'
     }	
     stage('UploadintoNexus') {        
-sh "echo uploading the artifact to nexus"
-sh "echo upload completed succesfully" 
+sh "echo uploading the artifact to nexus" 
 sh 'npm publish'
       }
 }
