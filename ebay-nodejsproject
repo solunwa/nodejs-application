@@ -1,0 +1,15 @@
+node
+{
+ 
+  stage("CheckOutCodeGit")
+  {
+    sh "echo running ebay nodejs project" 
+   git 'https://github.com/solunwa/nodejs-application'
+ }
+ 
+ stage("Build")
+ {
+   sh "echo building artifact"
+    sh "npm install"
+ }
+}
