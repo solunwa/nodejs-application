@@ -19,7 +19,7 @@ sh 'npm run sonar'
     }	
     stage('UploadintoNexus') {        
 sh "echo uploading the artifact to nexus" 
-sh 'npm publish'
+//sh 'npm publish'
       }
 }
 
