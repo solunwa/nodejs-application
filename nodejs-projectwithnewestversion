@@ -1,0 +1,29 @@
+node
+{
+ 
+  stage("CheckOutCodeGit")
+  {
+   git 'https://github.com/solunwa/nodejs-application/'
+ }
+ 
+ stage("Build")
+ {
+ //nodejs(nodeJSInstallationName: 'nodejs15.2.1') {
+        sh 'npm install'
+    }
+ }  
+ 
+  stage('ExecuteSonarQubeReport') {
+     //nodejs(nodeJSInstallationName: 'nodejs15.2.1') {
+        sh 'npm run sonar'
+    }
+      
+        } 
+		
+    stage('UploadintoNexus') {
+       //nodejs(nodeJSInstallationName: 'nodejs15.2.1') {
+          sh 'npm publish'
+      }
+      
+          }
+}
